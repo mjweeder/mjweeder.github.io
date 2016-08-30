@@ -46,7 +46,7 @@
     <h2>Layout of different types of experiments</h2>
   </hgroup>
   <article data-timings="">
-    <p><img src="./assets/img/fieldPlots.jpg" alt="APicture"> 
+    <p><img src="./assets/img/fieldPlots.jpg" alt="APicture">
 <img src="./assets/img/greenhousePlants.jpg" alt="APicture"> 
 <img src="./assets/img/peachOrchard.jpg" alt="APicture"> </p>
 
@@ -104,19 +104,20 @@ to adjust the assignment of randomized treatments to the irregulary shape.</li>
     <h2>Output of shiny app to randomized treatment</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Number of columns:    3</li>
-<li>Number of rows:       5</li>
-<li>Number of Treatments: 5</li>
-<li>Number of Replicates: 3</li>
-</ol>
+    <p>Algrothim to produced vector of randomized experimental units.</p>
 
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    2    2    5
-## [2,]    2    4    1
-## [3,]    5    3    5
-## [4,]    3    3    4
-## [5,]    4    1    1
+<pre><code class="r">        # initiate loop control counters
+        numberOfColumns &lt;- 3
+        numberofRows &lt;- 5
+        # Calculate total number of experimental units 
+       totalCells &lt;- numberOfColumns * numberofRows
+
+        # Create vector of randomized cell numbers for the total number of observatuins in the vector  
+        Matrix &lt;- sample(1:totalCells, totalCells,  replace=FALSE)
+        Matrix
+</code></pre>
+
+<pre><code>##  [1] 13  5  3  6 14  8  1 12  9  2 11 10  7  4 15
 </code></pre>
 
 <hr>
